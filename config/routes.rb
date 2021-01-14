@@ -1,3 +1,8 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :bachelorettes do
+    resources :contestants, controller: 'bachelorette/contestants', only: [:index, :show]
+  end
+    resources :bachelorettes
+    resources :outings
+    resources :contestants, only: [:show]
 end
